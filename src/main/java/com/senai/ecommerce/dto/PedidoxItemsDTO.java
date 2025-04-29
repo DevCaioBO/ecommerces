@@ -8,21 +8,18 @@ import com.senai.ecommerce.entities.ItemDoPedido;
 import com.senai.ecommerce.entities.Pedido;
 import com.senai.ecommerce.enums.StatusDoPedido;
 
-public class PedidoDTO{
+public class PedidoxItemsDTO {
 	private Long id;
 	private Instant momento;
 	private StatusDoPedido status;
 	private Long clientId;
-	private List<ItemDoPedidoNormalDTO> items =  new ArrayList<>();
 	
+	private List<ItemDoPedidoNormalDTO> items =  new ArrayList<>();;
 	
-	
-	
-	public PedidoDTO() {
+	public PedidoxItemsDTO() {
 		super();
 	}
-
-	public PedidoDTO(Long id, Instant momento, StatusDoPedido status, Long clientId) {
+	public PedidoxItemsDTO(Long id, Instant momento, StatusDoPedido status, Long clientId) {
 		super();
 		this.id = id;
 		this.momento = momento;
@@ -30,7 +27,7 @@ public class PedidoDTO{
 		this.clientId = clientId;
 	}
 	
-	public PedidoDTO(Pedido entity) {
+	public PedidoxItemsDTO(Pedido entity) {
 		super();
 		id =entity.getId();
 		momento = entity.getMomento();
@@ -39,58 +36,40 @@ public class PedidoDTO{
 		for (ItemDoPedido cat : entity.getItems()) {
 			items.add(new ItemDoPedidoNormalDTO(cat));
 		}
-		}
-
+		
+	}
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public Instant getMomento() {
 		return momento;
 	}
-
 	public void setMomento(Instant momento) {
 		this.momento = momento;
 	}
-
 	public StatusDoPedido getStatus() {
 		return status;
 	}
-
 	public void setStatus(StatusDoPedido status) {
 		this.status = status;
 	}
-
 	public Long getClientId() {
 		return clientId;
 	}
-
 	public void setClientId(Long clientId) {
 		this.clientId = clientId;
 	}
-
 	public List<ItemDoPedidoNormalDTO> getItems() {
 		return items;
 	}
-
 	public void setItems(List<ItemDoPedidoNormalDTO> items) {
 		this.items = items;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-
-
-
+	
+	
+	
 }
