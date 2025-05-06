@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.senai.ecommerce.entities.ItemDoPedido;
 import com.senai.ecommerce.entities.Pedido;
 import com.senai.ecommerce.enums.StatusDoPedido;
@@ -12,6 +13,7 @@ public class PedidoDTO{
 	private Long id;
 	private Instant momento;
 	private StatusDoPedido status;
+	@JsonProperty("clientId")
 	private Long clientId;
 	private List<ItemDoPedidoNormalDTO> items =  new ArrayList<>();
 	
