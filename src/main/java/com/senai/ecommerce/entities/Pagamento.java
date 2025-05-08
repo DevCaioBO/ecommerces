@@ -53,6 +53,13 @@ public class Pagamento {
 		super();
 	}
 	
+	public Pedido getPedido() {
+		return pedido;
+	}
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+	
 	
 
 }
